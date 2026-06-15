@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Economia dos Concertos - Grupo 4</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<header>
+  <span class="tag">Grupo 4 - Trabalho Escolar</span>
+  <h1>🎵 Economia dos Concertos</h1>
+  <p>Sala São Paulo · Análise de Vendas de Ingressos e Matemática Financeira</p>
+</header>
+
+<main>
+
+  <!-- seção 1: teoria -->
+  <div class="card">
+    <h2>📐 Interpretando a Função Afim</h2>
+
+    <p>
+      A arrecadação de um concerto pode ser calculada com uma <strong>função afim</strong> (função de 1º grau).
+      Na Sala São Paulo, o ingresso custa <strong>R$ 120,00</strong>, então a receita total depende
+      de quantos ingressos foram vendidos.
+    </p>
+
+    <div class="formula">R(x) = 120x</div>
+
+    <p>Cada parte da fórmula significa:</p>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="rotulo">R(x)</div>
+        <div class="dado">Arrecadação total (R$)</div>
+      </div>
+      <div class="info-item">
+        <div class="rotulo">x</div>
+        <div class="dado">Nº de ingressos vendidos</div>
+      </div>
+      <div class="info-item">
+        <div class="rotulo">120 (coeficiente angular)</div>
+        <div class="dado">Preço de cada ingresso</div>
+      </div>
+      <div class="info-item">
+        <div class="rotulo">Coeficiente linear</div>
+        <div class="dado">0 — sem receita fixa</div>
+      </div>
+      <div class="info-item">
+        <div class="rotulo">Capacidade máxima</div>
+        <div class="dado">1.388 pessoas</div>
+      </div>
+      <div class="info-item">
+        <div class="rotulo">Arrecadação máxima</div>
+        <div class="dado">R$ 166.560,00</div>
+      </div>
+    </div>
+
+    <p style="margin-top: 15px; color: #888; font-size: 14px;">
+      Como o coeficiente linear é zero, sem público não há receita.
+      Cada ingresso vendido adiciona exatamente R$ 120 na arrecadação — é uma proporcionalidade direta.
+    </p>
+  </div>
+
+  <!-- seção 2: simulador -->
+  <div class="card">
+    <h2>🎛️ Simulador de Cenários</h2>
+
+    <p style="color: #888; font-size: 14px; margin-bottom: 15px;">
+      Arraste o slider ou digite um número para simular a arrecadação.
+    </p>
+
+    <div class="linha-slider">
+      <span>0</span>
+      <input type="range" id="slider" min="0" max="1388" value="694" />
+      <span>1.388</span>
+      <input type="number" id="inputNumero" min="0" max="1388" value="694" />
+    </div>
+
+    <div class="resultados">
+      <div class="resultado-box">
+        <div class="titulo">🧑‍🤝‍🧑 Público selecionado</div>
+        <div class="numero" id="textoPublico">694 pessoas</div>
+      </div>
+      <div class="resultado-box">
+        <div class="titulo">💰 Arrecadação estimada</div>
+        <div class="numero" id="textoArrecadacao">R$ 83.280,00</div>
+      </div>
+    </div>
+
+    <div class="barra-wrap">
+      <div class="barra-topo">
+        <span>Taxa de ocupação</span>
+        <span id="textoOcupacao">50,0%</span>
+      </div>
+      <div class="barra-fundo">
+        <div class="barra-preenchimento" id="barraOcupacao" style="width: 50%"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- seção 3: gráfico -->
+  <div class="card">
+    <h2>📈 Gráfico da Função R(x) = 120x</h2>
+    <div class="grafico-wrap">
+      <canvas id="meuGrafico"></canvas>
+    </div>
+  </div>
+
+</main>
+
+<footer>Trabalho Escolar · Grupo 4 · Economia dos Concertos · Sala São Paulo</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
